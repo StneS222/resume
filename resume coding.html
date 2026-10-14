@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victoria Wotton - Resume</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px 15px;
+            background-color: #eeeeee;
+            font-family: Georgia, "Times New Roman", serif;
+            color: #333333;
+        }
+
+        /* Main resume container */
+        .resume {
+            width: 100%;
+            max-width: 740px;
+            margin: 0 auto;
+            background-color: #f8f7f6;
+            padding: 25px;
+        }
+
+        /* Header section */
+        .header {
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+            border-bottom: 2px solid #bd8b76;
+            padding-bottom: 18px;
+        }
+
+        .profile-photo {
+            width: 33%;
+            min-width: 150px;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .header-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .name-banner {
+            background-color: #b9664c;
+            color: #fff8ef;
+            padding: 22px 25px 15px;
+        }
+
+        .name-banner h1 {
+            font-size: 43px;
+            line-height: 1.05;
+            margin: 0;
+        }
+
+        .name-banner p {
+            font-size: 23px;
+            margin: 10px 0 0;
+        }
+
+        .contact {
+            padding: 12px 25px 0;
+            color: #ad725e;
+            font-size: 15px;
+            line-height: 1.5;
+            overflow-wrap: anywhere;
+        }
+
+        /* Two-column content */
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            padding: 20px 25px 10px;
+        }
+
+        .left-column {
+            padding-right: 22px;
+            border-right: 2px solid #bd8b76;
+        }
+
+        h2 {
+            color: #b9664c;
+            font-size: 25px;
+            font-weight: normal;
+            margin: 8px 0 12px;
+        }
+
+        h3 {
+            color: #b9664c;
+            font-size: 17px;
+            font-weight: normal;
+            margin: 15px 0 6px;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.45;
+            margin: 6px 0 12px;
+        }
+
+        .education-title {
+            font-weight: bold;
+        }
+
+        ul {
+            padding-left: 14px;
+            margin: 8px 0 20px;
+        }
+
+        li {
+            font-size: 15px;
+            line-height: 1.45;
+            margin-bottom: 3px;
+        }
+
+        .job {
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #bd8b76;
+        }
+
+        .job:last-child {
+            border-bottom: none;
+        }
+
+        .date {
+            margin-top: 5px;
+            margin-bottom: 2px;
+        }
+
+        .address {
+            margin-top: 0;
+        }
+
+        /* Responsive design for mobile */
+        @media (max-width: 560px) {
+            body {
+                padding: 10px;
+            }
+
+            .resume {
+                padding: 15px;
+            }
+
+            .header {
+                flex-direction: column;
+            }
+
+            .profile-photo {
+                width: 100%;
+                height: 260px;
+                object-position: center 25%;
+            }
+
+            .name-banner {
+                padding: 20px;
+            }
+
+            .name-banner h1 {
+                font-size: 36px;
+            }
+
+            .name-banner p {
+                font-size: 20px;
+            }
+
+            .contact {
+                padding: 12px 5px;
+            }
+
+            .content {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 15px 5px;
+            }
+
+            .left-column {
+                border-right: none;
+                border-bottom: 2px solid #bd8b76;
+                padding-right: 0;
+                padding-bottom: 10px;
+            }
+        }
+
+        /* Print the resume on paper */
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+
+            .resume {
+                max-width: none;
+                width: 100%;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="resume">
+
+        <!-- Header -->
+        <header class="header">
+
+            <img
+                src="profile.jpg"
+                alt="Victoria Wotton profile photo"
+                class="profile-photo"
+            >
+
+            <div class="header-right">
+
+                <div class="name-banner">
+                    <h1>Victoria<br>Wotton</h1>
+                    <p>Fashion designer</p>
+                </div>
+
+                <div class="contact">
+                    <div>(523) 302-9912</div>
+                    <div>victoriawotton@gmail.site.com</div>
+                    <div>778 Locust View Drive Oakland, CA</div>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- Main resume content -->
+        <main class="content">
+
+            <!-- Left column -->
+            <section class="left-column">
+
+                <h2>Fashion designer</h2>
+
+                <p>
+                    I am a fashion designer who has 7 years of experience
+                    in this job. I am very experienced in various fashion
+                    styles for all seasons and I have made various models
+                    for men and women for a world famous brand.
+                </p>
+
+                <h2>Education</h2>
+
+                <p>
+                    <span class="education-title">
+                        Bachelor of Arts in Fashion Design
+                    </span><br>
+                    Oakland Fashion University
+                </p>
+
+                <p>2014 - 2018</p>
+
+                <h2>Skill</h2>
+
+                <ul>
+                    <li>Apparel design</li>
+                    <li>Sketching</li>
+                    <li>Digital drawing</li>
+                    <li>Sewing</li>
+                    <li>Illustration</li>
+                    <li>Textures</li>
+                </ul>
+
+            </section>
+
+            <!-- Right column -->
+            <section class="right-column">
+
+                <h2>Experience</h2>
+
+                <div class="job">
+
+                    <p class="date">2018 - 2020</p>
+                    <p class="address">
+                        1556 Buckley Lane, Kansas City, MO
+                    </p>
+
+                    <h3>Fashion Designer Intern</h3>
+
+                    <ul>
+                        <li>
+                            Design fashion models from well-known clients
+                            and companies.
+                        </li>
+                        <li>
+                            Measure and provide samples of the latest
+                            fashion models to clients.
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="job">
+
+                    <p class="date">2021 - 2022</p>
+                    <p class="address">
+                        1676 Kemberly Drive, Chicago, IL
+                    </p>
+
+                    <h3>Fashion Designer</h3>
+
+                    <ul>
+                        <li>
+                            Developed fashion styles to promote a perfect
+                            new collection of women's swimsuits.
+                        </li>
+                        <li>
+                            Led negotiations with new vendors for the
+                            materials used in the 2022 fashion festival,
+                            saving more than 20% of annual expenses
+                            through material distribution, pricing,
+                            specifications, and delivery deadlines.
+                        </li>
+                    </ul>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+</html>

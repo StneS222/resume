@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> | Resume</title>
+  <style>
+    :root {
+      --accent: #df3e19;
+      --paper: #f2ece3;
+      --line: #ef9a7e;
+      --ink: #282522;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 32px 16px;
+      background: #e6e6e6;
+      color: var(--accent);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .resume {
+      width: min(100%, 900px);
+      margin: 0 auto;
+      background: var(--paper);
+      overflow: hidden;
+    }
+
+    /* HERO: large name + portrait + outlined labels */
+    .hero {
+      position: relative;
+      min-height: 390px;
+      padding: 22px 28px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto 1fr;
+      align-items: end;
+      column-gap: 18px;
+    }
+
+    .name {
+      grid-column: 1 / -1;
+      grid-row: 1 / 3;
+      align-self: start;
+      margin: 0;
+      color: var(--accent);
+      font-size: clamp(3rem, 10.2vw, 7rem);
+      line-height: 0.88;
+      letter-spacing: -0.065em;
+      font-weight: 900;
+      overflow-wrap: anywhere;
+      text-align: center;
+      padding-top: 10px;
+    }
+
+    .name span {
+      display: block;
+    }
+
+    .portrait {
+      position: absolute;
+      z-index: 2;
+      width: 29%;
+      height: 68%;
+      left: 35.5%;
+      bottom: 0;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(100%);
+      background: #d2cec7;
+    }
+
+    .tag {
+      z-index: 3;
+      align-self: end;
+      margin-bottom: 42px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 10px 12px;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: clamp(.7rem, 1.7vw, 1rem);
+      color: var(--accent);
+      background: rgba(242, 236, 227, 0.9);
+    }
+
+    .tag-left { grid-column: 1; }
+    .tag-right { grid-column: 2; }
+
+    .contact {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      padding: 12px 18px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      font-size: 13px;
+    }
+
+    .contact a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .sections {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .section {
+      padding: 16px 24px 18px;
+      border-bottom: 1px solid var(--line);
+      min-width: 0;
+    }
+
+    .section:nth-child(odd) {
+      border-right: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0 0 6px;
+      font-size: 17px;
+      line-height: 1.1;
+      font-style: italic;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    p, li {
+      margin-top: 0;
+      font-size: 12.5px;
+      line-height: 1.3;
+    }
+
+    .job, .degree {
+      margin-bottom: 12px;
+    }
+
+    .job:last-child, .degree:last-child {
+      margin-bottom: 0;
+    }
+
+    .job strong, .degree strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .job p, .degree p {
+      margin: 2px 0 5px;
+    }
+
+    .skills-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px 12px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .skills-list li {
+      margin: 0;
+    }
+
+    .note {
+      width: min(100%, 900px);
+      margin: 14px auto 0;
+      color: #444;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 12px 8px; }
+      .hero {
+        min-height: 280px;
+        padding: 18px 12px 0;
+        column-gap: 10px;
+      }
+      .name {
+        font-size: clamp(2.7rem, 12vw, 4.5rem);
+        letter-spacing: -0.07em;
+      }
+      .portrait {
+        width: 32%;
+        left: 34%;
+        height: 60%;
+      }
+      .tag { margin-bottom: 24px; padding: 8px 4px; }
+      .section { padding: 12px 11px; }
+      h2 { font-size: 14px; }
+      p, li { font-size: 11px; }
+      .contact { font-size: 11px; }
+    }
+
+    @media print {
+      body { padding: 0; background: white; }
+      .resume { width: 100%; max-width: none; }
+      .note { display: none; }
+      @page { size: A4; margin: 10mm; }
+    }
+  </style>
+</head>
+<body>
+  <main class="resume">
+    <header class="hero">
+      <h1 class="name"><span>VICTORIA</span><span>LUNTIN</span></h1>
+
+      <!-- Put your portrait in the same folder as this HTML file and name it portrait.jpg -->
+      <img class="portrait" src="portrait.jpg" alt="Portrait of Victoria Luntin">
+
+      <div class="tag tag-left">Copywriter</div>
+      <div class="tag tag-right">Resume</div>
+    </header>
+
+    <div class="contact">
+      <a href="tel:+14154130703">+(415) 413-0703</a>
+      <a href="mailto:info@victorialuntin.site.com">info@victorialuntin.site.com</a>
+      <span>1676 Kemberly Drive, Chicago, IL</span>
+    </div>
+
+    <div class="sections">
+      <section class="section">
+        <h2>Personal</h2>
+        <p>Hi there! I'm a creative copywriter and scriptwriter with years of experience in crafting engaging content. Skilled in developing compelling narratives, I focus on delivering high-quality work that meets client objectives.</p>
+      </section>
+
+      <section class="section">
+        <h2>Education</h2>
+        <div class="degree">
+          <strong>Master Degree of Creative Writing</strong>
+          <p>University of Soiree | Sep 20XX – May 20XX</p>
+        </div>
+        <div class="degree">
+          <strong>Bachelor of Arts in English Literature</strong>
+          <p>University of Soiree | Sep 20XX – May 20XX</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Experience</h2>
+        <div class="job">
+          <strong>Copywriter</strong>
+          <p>Redrock Creative | Dates</p>
+          <ul>
+            <li>Developed marketing copy and brand messaging.</li>
+            <li>Improved visibility and audience engagement.</li>
+          </ul>
+        </div>
+        <div class="job">
+          <strong>Scriptwriter</strong>
+          <p>Sunrise Agency | Dates</p>
+          <ul>
+            <li>Wrote scripts and creative concepts for campaigns.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+          <li>Copywriting</li>
+          <li>SEO Optimization</li>
+          <li>Content Strategy</li>
+          <li>Research and Analysis</li>
+          <li>Storytelling</li>
+          <li>Editing and Proofreading</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <p class="note"><strong>Customize this template:</strong> Replace the sample name, contact information, education, and experience with your own. Add your portrait as <code>portrait.jpg</code> in the same folder as this HTML file. To save as a PDF, open the HTML file in your browser and choose Print → Save as PDF.</p>
+</body>
+</html>
