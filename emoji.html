@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cat Emoji</title>
+<style>
+    body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #c9fec4;
+    }
+
+    canvas {
+        width: 360px;
+        height: 360px;
+    }
+</style>
+</head>
+<body>
+     <canvas id="myCanvas" width="200" height="200"></canvas>
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+        ctx.beginPath();
+        //draw circle
+        //ctx.arc(x, y, radius, startAngle, endAngle, counterclockwise);
+        ctx.arc(95, 90, 50, 0, 2 * Math.PI);
+        //fill the circle with yellow color
+        ctx.fillStyle = "yellow";
+        ctx.fill();
+        ctx.lineWidth = 4;
+        ctx.strokeStyle = "lightgreen";
+        ctx.stroke();
+        // Left eye
+ctx.beginPath();
+ctx.arc(78, 78, 5, 0, 2 * Math.PI);
+ctx.fillStyle = "orange";
+ctx.fill();
+// Right eye 
+ctx.beginPath
+ctx.arc(111, 78, 5, 0, 2 * Math.PI);
+ctx.fillStyle = "orange";
+ctx.fill();
+
+
+
+    
+
+</script>
+</body>
+</html>

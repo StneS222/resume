@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Emoji</title>
+    <style>
+        canvas {
+            border: 1px solid #000;
+        }
+
+        body {
+            background-color: #f2a4d1;
+        }
+    </style>
+
+</head>
+
+<body>
+    <canvas id="myCanvas" width="200" height="200"></canvas>
+    <script>
+
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+
+// Starting position
+let xDiff = 0;
+let yDiff = 0;
+
+// Movement speed
+let xSpeed = 2;
+let ySpeed = 2;
+
+// Draw the emoji
+function drawEmoji() {
+
+    // Face
+    ctx.beginPath();
+    ctx.arc(95 + xDiff, 90 + yDiff, 50, 0, 2 * Math.PI);
+    ctx.fillStyle = "yellow";
+    ctx.fill();
+    ctx.lineWidth = 4;
+    ctx.strokeStyle = "lightgreen";
+    ctx.stroke();
+
+    // Left eye
+    ctx.beginPath();
+    ctx.arc(78 + xDiff, 78 + yDiff, 5, 0, 2 * Math.PI);
+    ctx.fillStyle = "orange";
+    ctx.fill();
+
+    // Right eye
+    ctx.beginPath();
+    ctx.arc(112 + xDiff, 78 + yDiff, 5, 0, 2 * Math.PI);
+    ctx.fillStyle = "orange";
+    ctx.fill();
+
+    // Mouth
+    ctx.beginPath();
+    ctx.arc(95 + xDiff, 100 + yDiff, 30, 0, Math.PI);
+    ctx.lineWidth = 4;
+    ctx.strokeStyle = "orange";
+    ctx.stroke();
+
+    // Tongue
+    ctx.beginPath();
+    ctx.arc(95 + xDiff, 129 + yDiff, 10, 0, Math.PI);
+    ctx.fillStyle = "red";
+    ctx.fill();
+
+    // Nose
+    ctx.beginPath();
+    ctx.arc(95 + xDiff, 99 + yDiff, 15, 0, 2 * Math.PI);
+    ctx.fillStyle = "green";
+    ctx.fill();
+
+    // Ears
+    ctx.beginPath();
+    ctx.arc(45 + xDiff, 55 + yDiff, 8, 0, 2 * Math.PI);
+    ctx.arc(145 + xDiff, 55 + yDiff, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "yellow";
+    ctx.fill();
+}
+
+// Clear the canvas
+function clearEmoji() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+// Animate the emoji
+function animateEmoji() {
+
+    clearEmoji();
+
+    // Move horizontally and vertically
+    xDiff += xSpeed;
+    yDiff += ySpeed;
+
+    // Bounce off left and right edges
+    if (xDiff >= 57 || xDiff <= -37) {
+        xSpeed = -xSpeed;
+    }
+
+    // Bounce off top and bottom edges
+    if (yDiff >= 60 || yDiff <= -20) {
+        ySpeed = -ySpeed;
+    }
+
+    drawEmoji();
+
+    requestAnimationFrame(animateEmoji);
+}
+
+// Start animation
+animateEmoji();
+
+    </script>
+
+    <style>
+
+    </style>
+</body>
+
+</html>

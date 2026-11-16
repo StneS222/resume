@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Animation</title>
+
+    <style>
+        #cat, #ghost {
+            position: relative;
+            left: 0px;
+            top: 0px;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #F27E9F;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+    </style>
+
+    <script>
+        var imgObj;
+
+        function init() {
+            imgObj = document.getElementById('cat');
+
+            document.getElementById('characterSwitch')
+                .addEventListener('change', selectCharacter);
+
+            selectCharacter();
+        }
+
+        function selectCharacter() {
+            var toggle = document.getElementById('characterSwitch');
+
+            if (toggle.checked) {
+                imgObj = document.getElementById('ghost');
+            } else {
+                imgObj = document.getElementById('cat');
+            }
+        }
+
+        function moveRight() {
+            imgObj.style.left =
+                (parseInt(imgObj.style.left, 10) + 10) + 'px';
+        }
+
+        function moveLeft() {
+            imgObj.style.left =
+                (parseInt(imgObj.style.left, 10) - 10) + 'px';
+        }
+
+        function moveUp() {
+            imgObj.style.top =
+                (parseInt(imgObj.style.top, 10) - 10) + 'px';
+        }
+
+        function moveDown() {
+            imgObj.style.top =
+                (parseInt(imgObj.style.top, 10) + 10) + 'px';
+        }
+
+        window.onload = init;
+    </script>
+</head>
+
+<body>
+    <form onsubmit="return false;">
+        <img id="cat" src="cat animations.gif" alt="Cat" />
+        <img id="ghost" src="e497484e-428a-4a96-920d-496a1ac363f2_ghostie_idle_inactive_cat.gif" alt="Ghost cat" />
+
+        <p>Use the toggle to choose which character to control.</p>
+
+        <input type="button" value="Left" onclick="moveLeft();" />
+        <input type="button" value="Right" onclick="moveRight();" />
+        <input type="button" value="Up" onclick="moveUp();" />
+        <input type="button" value="Down" onclick="moveDown();" />
+
+        <p>Control ghost:</p>
+
+        <label class="switch">
+            <input type="checkbox" id="characterSwitch">
+            <span class="slider round"></span>
+        </label>
+    </form>
+</body>
+</html>
